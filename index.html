@@ -74,18 +74,20 @@
         }
         function redirect(){
             
-            const scriptURL = "https://script.google.com/macros/s/AKfycbx1RabaP1jcbwYYfunufVD9FrI62gKOelLIiMvrNl7Lslc5O7pVR4wwqRqnE6zpEj7-/exec"
-            const form = document.forms['form']
+            if(document.getElementById("key").value === "ev3r_heArd_Of_base64_THVjaWZlcg"){
+                const scriptURL = "https://script.google.com/macros/s/AKfycbx1RabaP1jcbwYYfunufVD9FrI62gKOelLIiMvrNl7Lslc5O7pVR4wwqRqnE6zpEj7-/exec"
+                const form = document.forms['form']
 
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => console.log('Success!', response))
-            .catch(error => console.error('Error!', error.message))
+                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
 
-            document.getElementById("container").innerHTML=`
-            <center>
-                <h2 class="label_1">Succ3ss !! y0U W1LL be N0t1f1ed s0oN</h2>
-            </center>
-            `
+                document.getElementById("container").innerHTML=`
+                <center>
+                    <h2 class="label_1">Succ3ss !! y0U W1LL be N0t1f1ed s0oN</h2>
+                </center>
+                `   
+            }
         }
     </script>
 
