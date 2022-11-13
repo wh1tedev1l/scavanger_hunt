@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It Begin's</title>
+
+    <style>
+        body{background-color: black;}
+        .label_1{
+            position: relative;
+            color: white;
+            font-size: 3rem;
+            margin: 2rem;
+            top: 3rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 100;
+        }
+        .label{
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 100;
+        }
+        .text_field{
+            cursor: text;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: larger;
+            font-weight: bold;
+            background-color: rgb(224, 224, 224);
+            border: 0;
+            margin: 1.2rem;
+            height: 2rem;
+        }
+        #container{
+            position: relative;
+            top: 5rem;
+        }
+        .submit{
+            background-color: red;
+            color: #fff;
+            height: 3rem;
+            width: 250px;
+            margin: 1.2rem;
+            cursor: wait;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="container">
+        <center>
+            <form name="form">
+                <h2 class="label">eNT3r YoUr ro11 nUmbEr</h2>
+                    <input name="htno" id="htno" class="text_field" placeholder="ro11 nUmbEr" type="text">
+                <h2 class="label">eNT3r YoUr naMe</h2>
+                    <input name="name" id="name" class="text_field" placeholder="nAme" type="text">
+                <h2 class="label">eNT3r tH3 KEY</h2>
+                    <input name="key" id="key" class="text_field" placeholder="KEY" type="text"><br>
+                <button onclick="redirect()" hidden id="submit" type="submit" class="submit">SUBMIT</button>
+            </form>
+        </center>
+    </div>
+
+    <script>
+        document.getElementById("key").addEventListener("input",check_the_key)
+        function check_the_key(e){
+            if(e.target.value === "key"){
+                document.getElementById("submit").hidden=false;
+            }
+            else{
+                document.getElementById("submit").hidden=true;
+            }
+        }
+        function redirect(){
+            
+            const scriptURL = "https://script.google.com/macros/s/AKfycbx1RabaP1jcbwYYfunufVD9FrI62gKOelLIiMvrNl7Lslc5O7pVR4wwqRqnE6zpEj7-/exec"
+            const form = document.forms['form']
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+
+            document.getElementById("container").innerHTML=`
+            <center>
+                <h2 class="label_1">Succ3ss y0U W1LL be N0t1f1ed</h2>
+            </center>
+            `
+        }
+    </script>
+
+</body>
+</html>
