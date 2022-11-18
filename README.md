@@ -1,1 +1,6 @@
 # scavanger_hunt
+
+IT'S JUST FOR FUN
+DON'T OVERTHINK,
+DON'T OVERDO,
+JUST DO IT.
